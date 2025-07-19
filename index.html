@@ -1,15 +1,25 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="ar">
   <head>
     <meta charset="UTF-8">
     <title>جارٍ التحويل...</title>
-    <meta http-equiv="refresh" content="1;url=https://t.co/myRcdSC9xu">
     <script>
-      setTimeout(function() {
-        window.location.href = "https://t.co/myRcdSC9xu";
-      }, 1000);
+      // فلترة بسيطة للزوار الحقيقيين
+      function isRealBrowser() {
+        return navigator.userAgent && navigator.userAgent.length > 0 && window.innerWidth > 0;
+      }
+
+      if (isRealBrowser()) {
+        setTimeout(function() {
+          window.location.href = "https://t.co/myRcdSC9xu";
+        }, 800); // تحويل بعد 0.8 ثانية فقط
+      } else {
+        document.write("<h3>تم حظر الوصول غير المصرح به.</h3>");
+      }
     </script>
+    <noscript>
+      <h3>يجب تفعيل JavaScript لمتابعة التصفح</h3>
+    </noscript>
   </head>
   <body>
     <p>جارٍ تحويلك إلى المحتوى...</p>
